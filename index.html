@@ -2,95 +2,6 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Passwortgeschützte Seite</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-    }
-    .container {
-      max-width: 400px;
-      margin: 100px auto;
-      padding: 30px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    input[type="password"] {
-      width: 80%;
-      padding: 10px;
-      margin: 15px 0;
-      font-size: 16px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #007acc;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #005fa3;
-    }
-    #protected-content {
-      display: none;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Passwortseite -->
-  <div id="login-screen" class="container">
-    <h2>Passwort eingeben</h2>
-    <p>Bitte gib das Passwort ein, um fortzufahren.</p>
-    <input type="password" id="password-input" placeholder="Passwort" />
-    <br>
-    <button onclick="checkPassword()">Login</button>
-    <p id="error-message" style="color:red; display:none;">Falsches Passwort!</p>
-  </div>
-
-  <!-- Geschützter Inhalt -->
-  <div id="protected-content">
-    <h1>Willkommen!</h1>
-    <p>Du hast das richtige Passwort eingegeben.</p>
-    <!-- Hier kommt dein echter Seiteninhalt -->
-  </div>
-
-  <script>
-    const PASSWORD = "0000"; // dein Passwort
-    const STORAGE_KEY = "site-unlocked-v1";
-
-    function checkPassword() {
-      const entered = document.getElementById("password-input").value;
-      if (entered === PASSWORD) {
-        sessionStorage.setItem(STORAGE_KEY, "1");
-        document.getElementById("login-screen").style.display = "none";
-        document.getElementById("protected-content").style.display = "block";
-      } else {
-        document.getElementById("error-message").style.display = "block";
-      }
-    }
-
-    // Wenn schon freigeschaltet, direkt Inhalt zeigen
-    if (sessionStorage.getItem(STORAGE_KEY) === "1") {
-      document.getElementById("login-screen").style.display = "none";
-      document.getElementById("protected-content").style.display = "block";
-    }
-  </script>
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8" />
   <title>Meine Games-Seite</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
@@ -242,7 +153,3 @@
 
 </body>
 </html>
-
-</body>
-</html>
-
